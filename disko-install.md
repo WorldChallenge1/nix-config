@@ -107,7 +107,7 @@ nvme0n1     259:0    0  1.8T  0 disk
 In our example, we want to install to a USB-stick (/dev/sda):
 
 ```console
-$ sudo nix run 'github:nix-community/disko/latest#disko-install' -- --flake '/tmp/config/etc/nixos#mymachine' --disk main /dev/sda
+$ sudo nix --experimental-features "nix-command flakes" run 'github:nix-community/disko/latest#disko-install' -- --flake '/tmp/config/etc/nixos#mymachine' --disk main /dev/sda
 ```
 
 Afterwards you can test your USB-stick by either selecting during the boot or
